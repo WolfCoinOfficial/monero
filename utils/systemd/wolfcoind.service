@@ -1,0 +1,21 @@
+[Unit]
+Description=WolfCoin Full Node
+After=network.target
+
+[Service]
+User=wolfcoin
+Group=wolfcoin
+WorkingDirectory=~
+RuntimeDirectory=wolfcoin
+
+Type=forking
+PIDFile=/run/wolfcoin/wolfcoind.pid
+
+ExecStart=/usr/bin/wolfcoind --config-file /etc/wolfcoind.conf \
+    --detach --pidfile /run/wolfcoin/wolfcoind.pid
+
+Restart=always
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

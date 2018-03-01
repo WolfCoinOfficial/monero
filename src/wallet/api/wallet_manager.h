@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2014-2018, The WolfCoin Project
 //
 // All rights reserved.
 //
@@ -32,7 +32,7 @@
 #include "wallet/api/wallet2_api.h"
 #include <string>
 
-namespace Monero {
+namespace WolfCoin {
 
 class WalletManagerImpl : public WalletManager
 {
@@ -89,4 +89,4 @@ private:
 
 } // namespace
 
-namespace Bitmonero = Monero;
+namespace Bitwolfcoin = WolfCoin;

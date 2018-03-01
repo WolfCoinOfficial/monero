@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2014-2018, The WolfCoin Project
 //
 // All rights reserved.
 //
@@ -1354,7 +1354,7 @@ namespace cryptonote
      * @brief loads block hashes from compiled-in data set
      *
      * A (possibly empty) set of block hashes can be compiled into the
-     * monero daemon binary.  This function loads those hashes into
+     * wolfcoin daemon binary.  This function loads those hashes into
      * a useful state.
      */
     void load_compiled_in_block_hashes();

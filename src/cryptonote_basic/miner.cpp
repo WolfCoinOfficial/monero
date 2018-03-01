@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2014-2018, The WolfCoin Project
 //
 // All rights reserved.
 //
@@ -69,8 +69,8 @@
 #include <unistd.h>
 #endif
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "miner"
+#undef WOLFCOIN_DEFAULT_LOG_CATEGORY
+#define WOLFCOIN_DEFAULT_LOG_CATEGORY "miner"
 
 using namespace epee;
 

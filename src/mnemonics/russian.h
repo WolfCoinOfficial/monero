@@ -1,6 +1,6 @@
-// Word list created by Monero contributor sammy007
+// Word list created by WolfCoin contributor sammy007
 // 
-// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2014-2018, The WolfCoin Project
 // 
 // All rights reserved.
 // 

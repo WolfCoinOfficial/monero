@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2014-2018, The WolfCoin Project
 //
 // All rights reserved.
 //
@@ -47,10 +47,10 @@
 using namespace std;
 using namespace cryptonote;
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "WalletAPI"
+#undef WOLFCOIN_DEFAULT_LOG_CATEGORY
+#define WOLFCOIN_DEFAULT_LOG_CATEGORY "WalletAPI"
 
-namespace Monero {
+namespace WolfCoin {
 
 namespace {
     // copy-pasted from simplewallet
@@ -1873,4 +1873,4 @@ bool WalletImpl::useForkRules(uint8_t version, int64_t early_blocks) const
 
 } // namespace
 
-namespace Bitmonero = Monero;
+namespace Bitwolfcoin = WolfCoin;

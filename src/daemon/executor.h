@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2014-2018, The WolfCoin Project
 // 
 // All rights reserved.
 // 
@@ -33,8 +33,8 @@
 #include <boost/program_options/variables_map.hpp>
 #include <string>
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "daemon"
+#undef WOLFCOIN_DEFAULT_LOG_CATEGORY
+#define WOLFCOIN_DEFAULT_LOG_CATEGORY "daemon"
 
 namespace daemonize
 {

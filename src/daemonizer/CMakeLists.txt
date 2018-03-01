@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2018, The Monero Project
+# Copyright (c) 2014-2018, The WolfCoin Project
 #
 # All rights reserved.
 #
@@ -54,9 +54,9 @@ else()
   )
 endif()
 
-monero_private_headers(daemonizer
+wolfcoin_private_headers(daemonizer
   ${daemonizer_private_headers})
-monero_add_library(daemonizer
+wolfcoin_add_library(daemonizer
   ${daemonizer_sources}
   ${daemonizer_headers}
   ${daemonizer_private_headers})

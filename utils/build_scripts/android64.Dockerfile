@@ -81,8 +81,8 @@ RUN git clone https://github.com/zeromq/zeromq4-1.git \
 
 RUN ln -s /opt/android/openssl/libcrypto.a /opt/android/openssl/libssl.a ${TOOLCHAIN_DIR}/aarch64-linux-android/lib
 
-RUN git clone https://github.com/monero-project/monero.git \
-    && cd monero \
+RUN git clone https://github.com/wolfcoin-project/wolfcoin.git \
+    && cd wolfcoin \
     && mkdir -p build/release \
     && cd build/release \
     && CC=clang CXX=clang++ \

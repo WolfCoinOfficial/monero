@@ -1,7 +1,7 @@
 # WolfCoin
 
-Copyright (c) 2018-present The WolfCoin Project.   
-Copyright (c) 2014-2018 The Monero Project.   
+Copyright (c) 2018-present The WolfCoin Project.
+Copyright (c) 2014-2018 The Monero Project.
 Portions Copyright (c) 2012-2013 The Cryptonote developers.
 
 ## Coverage
@@ -9,7 +9,7 @@ Portions Copyright (c) 2012-2013 The Cryptonote developers.
 | Type      | Status |
 |-----------|--------|
 | Coverity  | [![Coverity Status](https://scan.coverity.com/projects/9657/badge.svg)](https://scan.coverity.com/projects/9657/)
-| Coveralls | [![Coveralls Status](https://coveralls.io/repos/github/monero-project/monero/badge.svg?branch=master)](https://coveralls.io/github/monero-project/monero?branch=master)
+| Coveralls | [![Coveralls Status](https://coveralls.io/repos/github/wolfcoin-project/wolfcoin/badge.svg?branch=master)](https://coveralls.io/github/wolfcoin-project/wolfcoin?branch=master)
 | License   | [![License](https://img.shields.io/badge/license-BSD3-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 ## Introduction
@@ -321,7 +321,7 @@ cmake ..
 doas make install
 ```
 
-Build monero: `env DEVELOPER_LOCAL_TOOLS=1 BOOST_ROOT=/usr/local make release-static`
+Build wolfcoin: `env DEVELOPER_LOCAL_TOOLS=1 BOOST_ROOT=/usr/local make release-static`
 
 ### On Solaris:
 
@@ -337,11 +337,11 @@ Then you can run make as usual.
 ### On Linux for Android (using docker):
 
         # Build image (select android64.Dockerfile for aarch64)
-        cd utils/build_scripts/ && docker build -f android32.Dockerfile -t monero-android .
+        cd utils/build_scripts/ && docker build -f android32.Dockerfile -t wolfcoin-android .
         # Create container
-        docker create -it --name monero-android monero-android bash
+        docker create -it --name wolfcoin-android wolfcoin-android bash
         # Get binaries
-        docker cp monero-android:/opt/android/monero/build/release/bin .
+        docker cp wolfcoin-android:/opt/android/wolfcoin/build/release/bin .
 
 ### Building portable statically linked binaries
 
@@ -355,15 +355,15 @@ By default, in either dynamically or statically linked builds, binaries target t
 * ```make release-static-win64``` builds binaries on 64-bit Windows portable across 64-bit Windows systems
 * ```make release-static-win32``` builds binaries on 64-bit or 32-bit Windows portable across 32-bit Windows systems
 
-## Running monerod
+## Running wolfcoind
 
 The build places the binary in `bin/` sub-directory within the build directory
 from which cmake was invoked (repository root by default). To run in
 foreground:
 
-    ./bin/monerod
+    ./bin/wolfcoind
 
-To list all available options, run `./bin/monerod --help`.  Options can be
+To list all available options, run `./bin/wolfcoind --help`.  Options can be
 specified either on the command line or in a configuration file passed by the
 `--config-file` argument.  To specify an option in the configuration file, add
 a line with the syntax `argumentname=value`, where `argumentname` is the name
@@ -371,17 +371,17 @@ of the argument without the leading dashes, for example `log-level=1`.
 
 To run in background:
 
-    ./bin/monerod --log-file monerod.log --detach
+    ./bin/wolfcoind --log-file wolfcoind.log --detach
 
 To run as a systemd service, copy
-[monerod.service](utils/systemd/monerod.service) to `/etc/systemd/system/` and
-[monerod.conf](utils/conf/monerod.conf) to `/etc/`. The [example
-service](utils/systemd/monerod.service) assumes that the user `monero` exists
+[wolfcoind.service](utils/systemd/wolfcoind.service) to `/etc/systemd/system/` and
+[wolfcoind.conf](utils/conf/wolfcoind.conf) to `/etc/`. The [example
+service](utils/systemd/wolfcoind.service) assumes that the user `wolfcoin` exists
 and its home is the data directory specified in the [example
-config](utils/conf/monerod.conf).
+config](utils/conf/wolfcoind.conf).
 
 If you're on Mac, you may need to add the `--max-concurrency 1` option to
-monero-wallet-cli, and possibly monerod, if you get crashes refreshing.
+wolfcoin-wallet-cli, and possibly wolfcoind, if you get crashes refreshing.
 
 ## Internationalization
 
@@ -389,7 +389,7 @@ See [README.i18n.md](README.i18n.md).
 
 ## Using Tor
 
-While WolfCoin isn't made to integrate with Tor, it can be used wrapped with torsocks, if you add --p2p-bind-ip 127.0.0.1 to the monerod command line. You also want to set DNS requests to go over TCP, so they'll be routed through Tor, by setting DNS_PUBLIC=tcp or use a particular DNS server with DNS_PUBLIC=tcp://a.b.c.d (default is 8.8.4.4, which is Google DNS). You may also disable IGD (UPnP port forwarding negotiation), which is pointless with Tor. To allow local connections from the wallet, you might have to add TORSOCKS_ALLOW_INBOUND=1, some OSes need it and some don't. Example:
+While WolfCoin isn't made to integrate with Tor, it can be used wrapped with torsocks, if you add --p2p-bind-ip 127.0.0.1 to the wolfcoind command line. You also want to set DNS requests to go over TCP, so they'll be routed through Tor, by setting DNS_PUBLIC=tcp or use a particular DNS server with DNS_PUBLIC=tcp://a.b.c.d (default is 8.8.4.4, which is Google DNS). You may also disable IGD (UPnP port forwarding negotiation), which is pointless with Tor. To allow local connections from the wallet, you might have to add TORSOCKS_ALLOW_INBOUND=1, some OSes need it and some don't. Example:
 
 `DNS_PUBLIC=tcp torsocks wolfcoind --p2p-bind-ip 127.0.0.1 --no-igd`
 
